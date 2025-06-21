@@ -6,19 +6,19 @@ pipeline {
   }
 
   environment {
-    SONAR_TOKEN = credentials('sonar-token')  // 3-cü addımda əlavə etdiyin token ID
+    SONAR_TOKEN = credentials('sqa_acf3866493576fc7e98ad4c432b4f62e3bae1fa3')  // 3-cü addımda əlavə etdiyin token ID
   }
 
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/digininja/DVWA.git'  // öz forkunsa URL-ni dəyiş
+        git 'https://github.com/thehajiyev/DVWA.git'  // öz forkunsa URL-ni dəyiş
       }
     }
 
     stage('SonarQube Scan') {
       steps {
-        withSonarQubeEnv('MySonar') {  // Jenkins > Configure System-dəki Sonar server adı
+        withSonarQubeEnv('mysonar') {  // Jenkins > Configure System-dəki Sonar server adı
           sh 'sonar-scanner'
         }
       }
@@ -41,7 +41,7 @@ pipeline {
   }
 
   environment {
-    SONAR_TOKEN = credentials('sonar-token')  // 3-cü addımda əlavə etdiyin token ID
+    SONAR_TOKEN = credentials('sqa_acf3866493576fc7e98ad4c432b4f62e3bae1fa3')  // 3-cü addımda əlavə etdiyin token ID
   }
 
   stages {
