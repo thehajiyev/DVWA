@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  tools {
-    sonarQube 'MySonarScanner' // Jenkins > Global Tool Config-də olan Scanner adı
-  }
-
   environment {
     SONAR_TOKEN = credentials('sqa_acf3866493576fc7e98ad4c432b4f62e3bae1fa3')  // 3-cü addımda əlavə etdiyin token ID
   }
