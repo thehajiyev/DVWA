@@ -15,7 +15,7 @@ pipeline {
     stage('SonarQube Scan') {
       steps {
         withSonarQubeEnv('mysonar') {  // Jenkins > Configure System-dəki Sonar server adı
-          sh 'sonar-scanner'
+          sh 'sonar-scanner -X'
         }
       }
     }
